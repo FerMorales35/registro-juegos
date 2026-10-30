@@ -7,8 +7,9 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Mi Biblioteca</Text>
-      <TarjetaJuego juego={juegosPrueba[0]} />
-      <TarjetaJuego juego={juegosPrueba[1]} />
+      {juegosPrueba.map((juego) => (
+        <TarjetaJuego key={juego.id} juego={juego} />
+      ))}
       <StatusBar style="light" />
     </View>
   );
