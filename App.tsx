@@ -2,6 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, FlatList } from "react-native";
 import { TarjetaJuego } from "./src/components/TarjetaJuego";
 import { juegosPrueba } from "./src/data/juegosPrueba";
+import { ordenarPorFecha } from "./src/utils/ordenar";
 
 export default function App() {
   return (
@@ -9,7 +10,7 @@ export default function App() {
       <Text style={styles.title}>Mi Biblioteca</Text>
       <FlatList
         numColumns={2}
-        data={juegosPrueba}
+        data={ordenarPorFecha(juegosPrueba)}
         keyExtractor={(juego) => juego.id}
         renderItem={({ item }) => <TarjetaJuego juego={item} />}
         ListEmptyComponent={
