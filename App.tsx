@@ -12,6 +12,9 @@ export default function App() {
         data={juegosPrueba}
         keyExtractor={(juego) => juego.id}
         renderItem={({ item }) => <TarjetaJuego juego={item} />}
+        ListEmptyComponent={
+          <Text style={styles.title}>No hay juegos cargados</Text>
+        }
       />
       <StatusBar style="light" />
     </View>
